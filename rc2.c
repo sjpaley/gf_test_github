@@ -7,10 +7,21 @@
 int OBSTACLE_SENSE = 20;   //these constants are set for my robot. Yours may be different.
 int AVOIDANCE_RADIUS = 1700;  //1750
 int FORWARD_VALUE = 5200;
-int SPEED = 30;
+int SPEED = -30;
 float P = 2.5;//proportionality constant
 float D = 0; //derivative constant
 
+void turn_90_right()  //fix.........
+{
+	setMotorSpeed(right, -30);
+	setMotorSpeed(left, 30);
+while(getGyroHeading(gyro) > 90)
+	{}
+//	wait1Msec (550);
+	setMotorSpeed(right, 0);
+	setMotorSpeed(left, 0);
+
+}
 
 void turn_90_left()  //fix.........
 {
